@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .project {
+        width: fit-content;
+        justify-content: space-evenly;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .table{
+        padding: 5px;
+        border: 1px solid black;
+    }
+    .table tr , th , td{
+        padding: 5px;
+        border: 1px solid black;
+    }
+</style>
+<body>
+    <div class="project">
+        <h1>Press the Key to see the Magics</h1>
+        <div id="insert"></div>
+    </div>
+</body>
+<script>
+    const insert = document.getElementById('insert');
+    window.addEventListener('keydown' , (e) => {
+        insert.innerHTML = `
+        <div class = "table">
+            <table>
+                <tr>
+                    <th>Key</th>    
+                    <th>Key Code</th>    
+                    <th>Code</th>    
+                 </tr>   
+                     <tr>
+                      <td>${e.key === ' ' ? "Space" : e.key}</td> 
+                         <td>${e.keyCode}</td> 
+                         <td>${e.code}</td> 
+                 </tr>   
+             </table>   
+        </div>
+        `;
+    });
+</script>
+</html>
